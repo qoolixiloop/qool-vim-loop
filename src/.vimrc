@@ -199,8 +199,26 @@ nnoremap <leader>tw :call MaximizeToggle()<CR>
 " Grep
 " file: .vim/own_plugs/grep-operator.vim
 " :<c-u> starts command mode in visual mode
-nnoremap <leader>g :set operatorfunc=GrepOperator<cr>g@
-vnoremap <leader>g :<c-u>call GrepOperator(visualmode())<cr>
+nnoremap <leader>gr :set operatorfunc=GrepOperator<cr>g@
+vnoremap <leader>gr :<c-u>call GrepOperator(visualmode())<cr>
+
+" hi (highlight) cursorline
+" after sourcing .vimrc manually, for some reason vim forgets this command
+nnoremap <leader>hc  :hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE<cr>
+
+" redefine j and k to move within wrapped lines
+" the condition is there to minimize unwanted side effects.
+" it reads: only redefine if count is 0
+" count: An optional number that may precede a command to multiply 
+" or iterate the command. 
+"nnoremap <expr> j v:count ? 'j' : 'gj'
+"nnoremap <expr> k v:count ? 'k' : 'gk'
+
+" redefine Arrow Keys to move within wrapped lines
+nnoremap <Down> gj
+nnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
 " -----------------------------------------------------------------------------
 " }}}
 
@@ -382,7 +400,7 @@ set hlsearch                      " highlight current search
 "set listchars=tab:▸\ ,trail:·    " display unprintable chars 		  
 set listchars=tab:▸\ ,trail:·,eol:¶
 "set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-set nolist                        "␣display␣unprintable␣chars␣(see␣listchars)¬
+"set nolist                        "␣display␣unprintable␣chars␣(see␣listchars)¬
 "set magic                        " set magic for regex
 "set matchtime=3                  " show matching parent .3sec (default: .5)
 "set modelines=0                  " no modelines
@@ -391,8 +409,8 @@ set nocompatible                  " no compatible with VI
 "set nofoldenable                 " don't fold by default
 "set nojoinspaces                 " use only one space after a dot
 "set nospell                      " do not use spell checking
-set nonumber                      " to display line numbers (Toggle F6)
-set nowrap                        " does not wrap long lines
+"set nonumber                     " to display line numbers (Toggle F6)
+"set nowrap                       " does not wrap long lines
 "set numberwidth=1                " use only 1 column (+1 space) while possible
 "set pumheight=10                 " size of completion window: 10 lines
 set ruler                         " show the cursor position all the time
@@ -405,7 +423,9 @@ set splitright									  " vsplit opens new window to the right
 set textwidth=79                  " text default width = 79 columns
 set viminfo='1000,n$HOME/.vim/files/info/viminfo " plug.vim asked for this line
                                   "and startify does complain if it is not here
-set wrapmargin=0                  "turn off automatic wrapping while writing
+set wrapmargin=0                  "turn on/off automatic wrapping while writing
+set whichwrap+=<,>,h,l,[,]        " allow left and right arrow to go to next 
+                                  " wrapped line  in normal and visual mode
 " -----------------------------------------------------------------------------
 " }}}
 
@@ -570,4 +590,27 @@ function! Open_Md_Files_With_Grip_In_Firefox() abort
   execute ':!firefox http://localhost:6419'
 endfunction 
 "------------------------------------------------------------------------------
+" }}}
+
+" Autosave and autoreload all buffers ------------------------------------- {{{ 
+" copied from here:
+" https://stackoverflow.com/questions/2490227/
+" how-does-vims-autoread-work/20418591#20418591
+" Autocmd tutorial:
+" https://www.ibm.com/developerworks/library/l-vim-script-5/index.html
+" autocmd  EventName  filename_pattern   :command
+"------------------------------------------------------------------------------
+"
+" Save whenever switching windows or leaving vim. This is useful when running
+" the tests inside vim without having to save all files first.
+au FocusLost,WinLeave * :silent! wa
+
+" Trigger autoread when changing buffers or coming back to vim.
+" (Instead of shelling out ! with an empty command
+" :checktime command could be used)
+au FocusGained,BufEnter * :silent! !
+
+" When switching panes in tmux, an escape sequence is printed. Redrawing gets
+" rid of it. See https://gist.github.com/mislav/5189704#comment-951447
+au FocusLost * :redraw!
 " }}}

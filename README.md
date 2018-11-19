@@ -7,48 +7,57 @@
 
 
 ### ⏳ TL;DR 
-> This site is all about you, getting started with **VIM as an IDE** . If you like to find out, what tools and information I prepared for you, then please click on the button below.
+> This site is all about you, getting started with **Vim as an IDE** and being able to understand the important role of the **'.vimrc' configuration file**. If you like to find out, what tools and information I prepared for you, then please click on the button below.  
 >
 > <details>
-> <summary> 📖  read more... </summary>
->
-> ⏳
->
+> <summary> 📖  read more... </summary>  
+> ⏳  
+>  
 > #### Word of advice 
-> More importantly than learning everything or loading your Vim with ever more plugins is getting advice on how to work with it efficiently. One of my first steps to learn the basics was the Vimtutor, which taught me within an hour or so, how to open/save a file, copy/paste, search/replace, or how to navigate. I personally use Tmux to create windows and splits, use Vim netrw to open files in new tabs, rename or delete them, use manual folding for easy scrolling in my large files (with a trick in my '.vimrc' configuration file, so that they are stored after closing). I have syntax highlighting and syntax checking for different file types, as well as intellisense and word completion. In order to compare or merge files or versions I usually use Vimdiff or kdiff3. And to step through my code I use a debugger like pdb or bashdb.
+> Vim is already great and you can make it even greater. Perhaps you would like to have an all in one, highly organised IDE, where you can develop your apps simultaneously in different languages, pair-program, and even have dozens of files open in a highly structured way. 
+> Then you should try out a highly effective solution with Vim, [tmux and tmate][1302]. After installing Vim from here just click the link and follow the instructions. In a few minutes your upgraded IDE is up and running. But be warned, it may well be, you never want to leave your computer again.
+>
+> Even more importantly than learning everything or loading your Vim with ever more plugins is getting advice on how to work with it efficiently. One of my first steps to learn the basics was the [Vimtutor][50], which taught me within an hour or so, how to open/save/close a file, copy/paste, search/replace, or how to navigate. I personally use [Tmux][1301] to create windows and splits, use the integrated Vim netrw filemanager to open files in new tabs, rename or delete them, use manual folding for easy scrolling in my large files (with a trick in my ['.vimrc'][1503] configuration file, so that they are stored after closing). Thanks to some incredibly useful plugins, I have syntax highlighting and syntax checking for different file types, as well as intellisense and word completion. In order to compare or merge files or versions I usually use vimdiff or kdiff3. And to step through my code I use a debugger like pdb or bashdb, (installed with $ sudo apt install from the Ubuntu software center).
 >
 > #### Why could you profit from the content of this repository?
-> * Because &&&  
-> but &&&  
+> * There already are many good development environments availabe and some of them are quite expensive.  
+> Nevertheless or because of that, you would like to do your work with an unbelievably powerful terminal application, which provides you with everything you need to write your text or code efficiently.  
 >
-> * Because &&&  
-> but &&&  
+> * It is quite likely, that you already heard about Vim and even wanted to give it a try.  
+> But you noticed that it is not easy to start with.  
 >
-> * Because &&&  
-> but &&&  
+> * Maybe you already have Vim installed, and would like to try out my configuration, instead of creating one on your own.  
+> But you are not sure, whether it serves your purpose.  
+>
+> * Or perhaps you already have your own '.vimrc' configuration and would like to copy/paste some of my content.  
+> But you are struggling to understand the effects of the different parts.  
+>
+> * Or because you have already downloaded the '.vim' folder as well as the '.vimrc' configuration file from this repository, and have read the content of my [Vim Wiki pages][1402].  
+> But now you would like to understand every single line of the ['.vimrc'][1503] file.  
 >
 > Did you find anything?  
-> Then please read on. 
+> Then please read on.  
 >   
 > ⏳
 >
-> #### How the qoolixiloop repositories intend to make his friends productive
-> * You will get &&&  
-> &&& to become quickly productive.  
+> #### How qoolixiloop's repositories intend to make his friends productive
+> * I am going to share my '.vim' folder and '.vimrc' configuration file.  
+> This is all you need to have your new IDE up and running within minutes.
 >
-> * You will get &&&  
-> &&& .  
+> * The configuraton file contains the needed instructions to run Vim as an IDE for Python, Java or Bash as well as many useful key bindings to run commands or macros, or to simply let you make thing without e.g. leaving the insert mode.  
+> So you won't have to search for the needed plugins and make them work by yourself or implement and test the key bindings all by yourself.  
 >
-> * You will get the links to official reference pages.  
-> So you won't have to click through your web search engine's top ten search results to get your needed "How to".  
+> * In case you would like to adapt the behaviour of your Vim, it helps to learn from a well documented and already running system. There are many great plugins which support you with intellisense funcionality for nearly all programming languages.  
+> For that reason I will put the '.vimrc' file on my wiki page and give further [line by line explanations and comments][1503]. Usually, it is just enough to add an additional line inside the .vimrc configuration file and tell the plugin manager to download the plugin from GitHub.  
+>
+> * Vim has it's own programming language called Vimscript. The Vim configuration file as well as the plugins are usually written in Vimscript. That is why I will provide some useful [links][50] to resources I used to learn the language.  
+> In case you prefer to use your web search engine for your questions, you will still have to try out the right words for your search and will usually end up on one of those web sites.  
 >
 > Does this already sound like Christmas?  
 > Then please read on.  
 >
 > ⏳
 > </details>
-
-
 
 
 ### 🎁 Download my '.vim' folder and my '.vimrc' file
@@ -59,21 +68,19 @@
 > 🎁
    
 > 1. Go to your download folder (on Linux Ubuntu)  
->        $ cd ~/Downloads
+>       **$ cd ~/Downloads**
 >
 > 2. Clone the repository into your download folder   
->        $ git clone https://github.com/qoolixiloop/qool-vim-loop.git
+>       **$ git clone https://github.com/qoolixiloop/qool-vim-loop.git**
 >
 > 3. In case you already have an own copy of the '.vim' folder and '.vimrc' file in your home directory you might want to move them first into a backup folder or rename them.
 >
 > 4. Now you can savely move my '.vim' folder and '.vimrc' file it to your home directory.  
->        $ mv src/.vimrc $HOME  
->        $ mv src/.vim $HOME  
+>       **$ mv src/.vimrc $HOME**  
+>       **$ mv src/.vim $HOME**  
 >
 > 🎁
 > </details>
-
-
 
 
 ### 📜 Instructions on how to use .vim and .vimrc
@@ -86,27 +93,25 @@
 > 📜
 >   
 >    * In case you would like to install some additional software, like Shellcheck or Powerline from your software center, in Linux Ubuntu just type:  
->         $ sudo apt install powerline  
->         $ sudo apt install shellcheck  
+>         **$ sudo apt install powerline**  
+>         **$ sudo apt install shellcheck**  
 >
 >    * Open Vim on Linux Ubuntu with:  
->         $ vim  
+>         **$ vim**  
 >    
 >    * The only plugin I left in my '.vim' folder is the plugin manager. In order to download the needed plugins, just type:  
->         :PlugInstall    
+>         **:PlugInstall**  
 >    
 >    * Now you can open an existing file or create a new one in a new tab in Vim.  
->         :tabnew filename  
+>         **:tabnew filename**  
 >    
 >    * That's it! To save the file just type:  
->         :w  
+>         **:w**  
 >
-> * In order to get the promised explanations about the [content of my '.vimrc' file][1503] you may later want to visit my wiki page. (Ctrl-click to open the link in a new tab)  
+> **The essential commands in a nutshell:** If I work in a directory with dozens of files I usually open the Vim file manager with the command **:Ex**, click through the path to my files and open each file I need with **t**, make the directory the working directory with **c**, delete a file with **Shift-d** or rename it with **Shift-r**. To move between the tabs I use **gt** and **gT** to move forwards or backwards and e.g.**1gt** to jump to tab 1 where I have my file manager. To close a tab I enter **:tabc**. And to compare the content of two files, I move to the bash shell and enter **$ vimdiff file1 file2**.
 >
 >📜
 </details>
-
-
 
 
 ### 🌎 Links
@@ -145,10 +150,7 @@
 > </details>
 
 
-
-
 ### 🗄️ qoolixiloop's repositories
->
 > By clicking the button below you will see a table with links to my 15 Code and 15 Wiki repositories as well as a short description of what is already available. They cover a small subset of programming languages I learned during the last 20 or so years. The focus is mainly on free and open source tools within the linux operating system universe.  
 > Because the learning curve for many of those tools and languages I used was steeper than necessary, I decided to provide some of my resources, references and examples, in order to help new learners better understand important topics.  
 >
@@ -204,8 +206,6 @@
 >
 > 🗄️
 > </details>
-
-
 
 
 ### 💻 About me
@@ -280,6 +280,7 @@ qoolixiloop, 13. Nov. 2018
 [3]: http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html
 [4]: https://stackoverflow.com
 [5]: http://fprintf.net/vimCheatSheet.html
+[50]: #-links
 
 
 [//]: # (github.com links of 'Code: README.md' and 'Wiki: Home.md')
