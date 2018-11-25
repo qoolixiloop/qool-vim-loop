@@ -125,11 +125,15 @@
 >
 > | What the link provides ('Ctrl-click' to open in new tab) | Link to website
 > |:---------------------------------------- | :----------------------------------------| 
+> | `relevant links to websites:`            |
 > | over 1600 excellent pages         | [Fandom vim Tips Wiki][1]  |
 > | learn Vimscript and how to write a plugin | [Learn Vimscript the hard way][2]  |
 > | keyboard picture with Vim key bindings   | [Graphical vi-vim Cheat Sheet and Tutorial][3] |
 > | list of default vim key bindings | [Vim Commands Cheat Sheet][5] |
 > | also very useful for specific questions | [Stackoverflow][4] |
+> | `relavant links to my wiki pages:`       |
+> | - (empty list)                           |
+> |                                          |
 >
 > * There are many other summaries about Vim key bindings. Just type 'Vim cheet sheet' into your search engine. But be warned, for some of them you need really good eyes. I usually just copy/paste what I need into a libreoffice writer document, and make my own summary.
 >
