@@ -66,7 +66,7 @@
 > <details>
 > <summary> 📖  show resources to download </summary>
 > 🎁
-   
+>   
 > 1. Go to your download folder (on Linux Ubuntu)  
 >       **$ cd ~/Downloads**
 >
